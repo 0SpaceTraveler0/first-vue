@@ -1,4 +1,4 @@
-<template>
+<template>  
   <form @submit.prevent>
     <h4>Создание поста</h4>
     <input class="input" v-model="post.name" type="text" placeholder="ФИО" />

@@ -5,7 +5,7 @@
         <div><strong>Кем приходиться:</strong>  {{post.body}}</div>
         <button class="btn" @click="deletePost(post)">Удалить</button>
         <button class="btn">Редактировать</button>
-    </div> 
+    </div>  
 </template>
 <script>  
 export default{
