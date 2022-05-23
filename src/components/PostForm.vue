@@ -7,7 +7,7 @@
     <button class="btn" @click="createPost" > Создать </button>
   </form>
 </template>
-
+ 
 <script> 
 export default {
   data() {

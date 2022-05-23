@@ -20,7 +20,7 @@ export default{
                {id:3, name: 'Илья Палыч', phone: '8 (800) 555 36-36', body: ' Джун'}
             ],
         }
-    }, 
+    },  
     methods:{
         createPost(post){
             this.posts.push(post);
