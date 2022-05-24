@@ -28,7 +28,7 @@ export default{
         },
         async fetchPosts() {
             try {
-                const response = await axios.get('http://localhost:90/add/');
+                const response = await axios.get('http://localhost:90/get/');
                 this.posts = response.data;
             } catch (e) {
                 alert(e);
@@ -37,24 +37,42 @@ export default{
             }
         },
         createPost(post){
-            this.posts.push(post);
-            var param = {
-                    id: this.id,
-                    name: this.name,
-                    phone: this.phone,
-                    body: this.body
-    
-            }
-            axios.post( 
-                ''
-                , JSON.parse(JSON.stringify(param))
-            )
-            .then(function (response) {
-                console.log(response.data);
+            //this.posts.push(post);
+           /*  var param = {
+                    id: post.id,
+                    name: post.name,
+                    phone: post.phone,
+                    body: post.body   
+            } */
+           
+            axios({
+                method: 'post',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                url: 'http://localhost:90/add/',
+                data: {
+                    id: post.id,
+                    name: post.name,
+                    phone: post.phone,
+                    body: post.body  
+                }
+            })
+            .then(function(response) {
+
+                console.log(response);
+
             })
             .catch(function (error) {
                 console.log(error);
             });
+/*
+             try {
+                 const response = axios.get('http://localhost:90/add/',JSON.stringify(param));
+                this.posts = response.data;
+            } catch (e) {
+                alert(e);
+            } finally {
+                this.isPostsLoaded = true;
+            } */
         }
     }
 }
